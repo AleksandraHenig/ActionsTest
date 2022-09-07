@@ -6,7 +6,7 @@ on:
       - 'main'
       
 concurrency:
-  group: [devInt]
+  group: devInt
   cancel-in-progress: false
 
 jobs:

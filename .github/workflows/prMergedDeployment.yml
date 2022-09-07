@@ -1,0 +1,19 @@
+name: PR Merged Automatic Deployment
+
+on:
+  pull_request:
+    types: closed
+    branches:
+      - main
+      
+jobs:
+  deployment:
+    if: ${{ github.event.pull_request.merged }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          echo "PR merged"
+          sleep 2m
+          echo "Test build after merge completed"

@@ -14,6 +14,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: devkeydet/action-environment-queue@v1
+        with:
+          environment: int
 
       # Runs a single command using the runners shell
       - name: Run a one-line script

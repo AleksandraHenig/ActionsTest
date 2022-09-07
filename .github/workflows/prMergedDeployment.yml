@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: devkeydet/action-environment-queue@v1
+        with:
+          environment: int
       - name: build
         run: |
           echo "PR merged"

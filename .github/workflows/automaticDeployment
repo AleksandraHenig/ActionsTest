@@ -3,7 +3,7 @@ name: Automatic Deployment
 on:
   push:
     branches:
-      - 'main'
+      - main
       
 concurrency:
   group: devInt

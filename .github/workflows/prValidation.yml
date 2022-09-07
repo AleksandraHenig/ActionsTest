@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     
 concurrency:
-  group: [devInt, validate-pr-${{ github.head_ref }} ]
+  group: devInt
   cancel-in-progress: false
 
 jobs:

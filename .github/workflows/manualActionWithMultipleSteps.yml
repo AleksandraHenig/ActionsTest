@@ -15,3 +15,6 @@ jobs:
       
       - name: copying file
         run: cp README.md tmp/README.md
+      
+      - name: failed file copy
+        run: cp README.md tmpa/README.md

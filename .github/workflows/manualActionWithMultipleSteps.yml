@@ -12,7 +12,9 @@ jobs:
           fetch-depth: 0
       
       - name: variable creation
-        run: outputFilePath="tmp/README.md"
+        run: |
+          outputFilePath="tmp/README.md"
+          echo $outputFilePath
       
       - name: echo variable
         run: echo $outputFilePath

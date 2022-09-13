@@ -13,9 +13,9 @@ jobs:
       
       - name: variable creation
         run: |
-          export outputFilePath="tmp/README.md"
+          outputFilePath="tmp/README.md"
           echo $outputFilePath
-          echo "::set-env name=outputFilePath::$outputFilePath"
+          echo "outputFilePath=$outputFilePath" >> $GITHUB_ENV
       
       - name: echo variable
-        run: echo $outputFilePath
+        run: echo ${{ env.outputFilePath }}

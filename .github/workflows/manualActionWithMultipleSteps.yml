@@ -1,0 +1,17 @@
+name: Manual Action With Multiple Steps
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: directory creation
+        run: mkdir -p "tmp"
+      
+      - name: copying file
+        run: cp README.md tmp/README.md

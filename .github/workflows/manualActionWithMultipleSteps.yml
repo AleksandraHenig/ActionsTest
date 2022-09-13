@@ -17,4 +17,4 @@ jobs:
           echo $outputFilePath
       
       - name: echo variable
-        run: echo ${{ env.outputFilePath }}
+        run: echo $outputFilePath

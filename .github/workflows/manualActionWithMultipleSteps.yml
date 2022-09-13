@@ -13,10 +13,8 @@ jobs:
       
       - name: variable creation
         run: |
-          outputFilePath="tmp/README.md"
+          export outputFilePath="tmp/README.md"
           echo $outputFilePath
-        env:
-          outputFilePath
       
       - name: echo variable
         run: echo ${{ env.outputFilePath }}

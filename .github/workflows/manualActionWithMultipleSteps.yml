@@ -13,8 +13,11 @@ jobs:
       - name: directory creation
         run: mkdir -p "tmp"
       
-      - name: copying file
-        run: cp README.md tmp/README.md
+      - name: variable creation
+        run: outputFilePath="tmp/README.md"
       
-      - name: failed file copy
-        run: cp README.md tmpa/README.md
+      - name: copying file
+        run: cp README.md $outputFilePath
+      
+      - name: echo variable
+        run: echo $outputFilePath

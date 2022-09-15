@@ -7,3 +7,4 @@ incrementedNumber=$((${tagComponents[1]}+1))
 git config user.name "GitHub Actions Bot"
 git config user.email "<>"
 git tag -a $1$incrementedNumber -m "Deployment $1$incrementedNumber"
+git push origin --tags

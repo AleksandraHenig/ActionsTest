@@ -12,4 +12,4 @@ jobs:
           fetch-depth: 0
       - name: test deployment
         run: |
-          bash .github/scripts/.tag.sh int-
+          bash .github/scripts/tag.sh int-

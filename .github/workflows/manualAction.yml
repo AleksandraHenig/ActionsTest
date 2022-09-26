@@ -25,7 +25,9 @@ jobs:
           fetch-depth: 0
       - name: boolean test
         if: ${{ inputs.withTests }}
-        run: echo "boolean set as true"
+        run: echo ${{ inputs.withTests }}
+      - name: string test
+        run: echo ${{ inputs.inputString }}
       - name: test deployment
         run: |
           previousCommit=$(git show HEAD^1)

@@ -2,6 +2,19 @@ name: Manual Action
 
 on:
   workflow_dispatch:
+    inputs:
+      inputString:
+        description: 'String input test'
+        type: string
+        required: false
+      withTests:
+        description: 'Should deployment be performed with tests?'
+        type: boolean
+        required: true
+      environment:
+        description: 'Deployment environment'
+        type: environment
+        required: true
   
 jobs:
   test-job:
@@ -10,6 +23,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: boolean test
+        if: ${{ inputs.withTests }}
+        run: echo "boolean set as true"
       - name: test deployment
         run: |
           previousCommit=$(git show HEAD^1)

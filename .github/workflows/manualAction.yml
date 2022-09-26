@@ -3,10 +3,13 @@ name: Manual Action
 on:
   workflow_dispatch:
     inputs:
-      inputString:
-        description: 'String input test'
-        type: string
-        required: false
+      inputChoice:
+        description: 'Choice input test'
+        type: choice
+        required: true
+        options:
+        - first
+        - second
       withTests:
         description: 'Should deployment be performed with tests?'
         type: boolean
@@ -26,8 +29,8 @@ jobs:
       - name: boolean test
         if: ${{ inputs.withTests }}
         run: echo ${{ inputs.withTests }}
-      - name: string test
-        run: echo ${{ inputs.inputString }}
+      - name: choice test
+        run: echo ${{ inputs.inputChoice }}
       - name: test deployment
         run: |
           previousCommit=$(git show HEAD^1)

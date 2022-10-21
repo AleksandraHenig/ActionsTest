@@ -1,4 +1,4 @@
-name: Manual Action Adding Tag
+name: Manual Action Creating Changelog
 
 on:
   workflow_dispatch:

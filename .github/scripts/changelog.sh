@@ -2,8 +2,8 @@ oldCommit=$1
 newCommit=$2
 
 echo ':::: DEPLOYMENT INFO'
-echo ':: Job runs for commit: ' + $(git show --format="%H by %an, %as (%ar)" --no-patch)
-echo ':: Job runs for branch: ' + $(git rev-parse --abbrev-ref HEAD)
+echo ':: Job runs for commit: ' $(git show --format="%H by %an, %as (%ar)" --no-patch)
+echo ':: Job runs for branch: ' $(git rev-parse --abbrev-ref HEAD)
 echo ''
 
 echo ':::: CHANGELOG'

@@ -14,4 +14,9 @@ jobs:
         run: |
           latestTag=$(git describe --tags --abbrev=0 --match int-*)
           currentCommit=$(git show HEAD --pretty=format:"%h" --no-patch)
-          bash .github/scripts/changelog.sh $latestTag $currentCommit ABC
+          if [ -z $latestTag ]
+          then
+            bash .github/scripts/changelog.sh $latestTag $currentCommit ABC
+          else
+            echo ':: Changelog cannot be generated'
+          fi

@@ -12,7 +12,7 @@ jobs:
           fetch-depth: 0
       - name: test changelog
         run: |
-          latestTag=$(git describe --tags --abbrev=0 --match int-*)
+          latestTag=$(git describe --tags --abbrev=0 --match ind-*)
           currentCommit=$(git show HEAD --pretty=format:"%h" --no-patch)
           if [ -z $latestTag ]
           then

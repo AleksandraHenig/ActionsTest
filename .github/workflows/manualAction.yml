@@ -19,6 +19,7 @@ on:
         description: 'Deployment environment'
         type: environment
         required: true
+      branches: main
   
 jobs:
   test-job:

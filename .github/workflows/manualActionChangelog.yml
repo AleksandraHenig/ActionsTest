@@ -12,10 +12,10 @@ jobs:
           fetch-depth: 0
       - name: test changelog
         run: |
-          latestTag=$(git describe --tags --abbrev=0 --match ind-*)
-          currentCommit=$(git show HEAD --pretty=format:"%h" --no-patch)
-          if [ -z $latestTag ]
+          if $(git rev-list ind-1..)
           then
+            latestTag=$(git describe --tags --abbrev=0 --match ind-*)
+            currentCommit=$(git show HEAD --pretty=format:"%h" --no-patch)
             bash .github/scripts/changelog.sh $latestTag $currentCommit ABC
           else
             echo ':: Changelog cannot be generated'

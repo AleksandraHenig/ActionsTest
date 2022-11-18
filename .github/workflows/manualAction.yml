@@ -19,7 +19,6 @@ on:
         description: 'Deployment environment'
         type: environment
         required: true
-      ref: main
   
 jobs:
   test-job:

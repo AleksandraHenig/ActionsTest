@@ -16,5 +16,5 @@ git config user.name "GitHub Actions Bot"
 git config user.email "<>"
 
 #add tag
-git tag -a $1$incrementedNumber -m "Deployment $incrementedNumber"
+git tag -a $incrementedNumber -m "Deployment $incrementedNumber"
 git push origin --tags

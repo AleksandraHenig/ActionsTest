@@ -18,5 +18,6 @@ jobs:
             currentCommit=$(git show HEAD --pretty=format:"%h" --no-patch)
             bash .github/scripts/changelog.sh $latestTag $currentCommit ABC
           else
-            echo ':: Changelog cannot be generated'
+            echo ''
+            echo ':::: Changelog cannot be generated'
           fi

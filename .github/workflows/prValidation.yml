@@ -26,7 +26,7 @@ jobs:
           currentBranch=$(git rev-parse --abbrev-ref HEAD)
           echo $currentBranch
           echo ${{ github.head_ref }}
-          echo $(git diff main...${{ github.head_ref }} --name-only)
+          echo $(git diff origin/main...origin/${{ github.head_ref }} --name-only)
 
       # Runs a set of commands using the runners shell
       - name: Run failing multi-line script

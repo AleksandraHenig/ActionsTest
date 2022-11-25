@@ -21,7 +21,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run echo merge base
         run: |
-          currentBranch=$(git rev-parse --abbrev-ref HEAD)
+          currentBranch=$(git rev-parse --abbrev-ref HEAD~1)
           echo $currentBranch
           echo $(git diff $currentBranch...main --name-only)
 

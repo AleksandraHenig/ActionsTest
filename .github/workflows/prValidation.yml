@@ -20,7 +20,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run echo merge base
-        run: echo $(git diff ${{ github.sha }}...main --name-only)
+        run: echo $(git diff $(git rev-parse --abbrev-ref HEAD)...main --name-only)
 
       # Runs a set of commands using the runners shell
       - name: Run failing multi-line script

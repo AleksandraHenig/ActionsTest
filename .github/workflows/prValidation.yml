@@ -32,6 +32,4 @@ jobs:
       - name: Run failing multi-line script
         run: |
           echo Starting pr build
-          bad step
-          sleep 2m
           echo ending pr build

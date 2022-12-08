@@ -1,1 +1,2 @@
 test file for PR builds
+There should be auto build now after PR is merged

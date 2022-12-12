@@ -1,0 +1,19 @@
+name: Manual Docker Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    container: salesforce/salesforcedx:latest-slim
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: show job info
+        run: |
+          echo ':::: DEPLOYMENT INFO'
+          echo ':: Job runs for commit: ' $(git show --format="%H by %an, %as (%ar)" --no-patch)
+          echo ':: Job runs for branch: ' $(git rev-parse --abbrev-ref HEAD)

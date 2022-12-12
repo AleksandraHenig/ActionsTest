@@ -7,7 +7,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    container: salesforce/salesforcedx:latest-slim
+    container:
+      image: salesforce/salesforcedx:latest-slim
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@v3
         with:

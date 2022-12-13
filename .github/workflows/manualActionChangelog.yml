@@ -6,12 +6,14 @@ on:
 jobs:
   test-job:
     runs-on: ubuntu-latest
+    container: salesforce/salesforcedx:latest-slim
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: test changelog
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           if [ ! -z "$(git rev-list int-1..)" ]
           then
             latestTag=$(git describe --tags --abbrev=0 --match int-*)

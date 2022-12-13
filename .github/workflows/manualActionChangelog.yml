@@ -19,7 +19,7 @@ jobs:
             latestTag=$(git describe --tags --abbrev=0 --match int-*)
             echo "latestTag=$latestTag" >> $GITHUB_ENV
             currentCommit=$(git show HEAD --pretty=format:"%h" --no-patch)
-            bash .github/scripts/changelog.sh $latestTag $currentCommit ABC
+            bash ${GITHUB_ACTION_PATH}/scripts/changelog.sh $latestTag $currentCommit ABC
           else
             echo ''
             echo ':::: Changelog cannot be generated'

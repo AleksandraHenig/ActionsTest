@@ -26,8 +26,8 @@ jobs:
           fi
       - name: test env variable
         run: |
-          newLatestTagVariable=${{ env.latestTag }}
-          if [[ ! -z "$newLatestTagVariable" ]]
+          set -e
+          if [[ ! -z "${{ env.latestTag }}" ]]
           then
             path="force-app/tmp"
           else
